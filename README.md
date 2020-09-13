@@ -1,1 +1,1 @@
-# ratemycourse
+# Rate My Course
