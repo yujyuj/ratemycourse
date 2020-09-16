@@ -1,11 +1,14 @@
-.navbar-custom {
+.navbar-default {
     background-color:rgb(255, 94, 0);
-    color: white;
-   }
+}
 
-/* .navbar-brand a {
-    color: white;
-} */
+nav a{
+    color: white !important;
+}
+
+.btn{
+    background-color:rgb(255, 94, 0)!important;
+}
 
 #delete-form{
     display:inline;

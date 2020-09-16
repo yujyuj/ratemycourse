@@ -1,9 +1,9 @@
 
 const  express    = require("express")
-	   app        = express()
-	   mongoose   = require("mongoose")
+       app        = express()
+       mongoose   = require("mongoose")
        Course     = require("./models/course")
-	   Comment    = require("./models/comment")
+       Comment    = require("./models/comment")
        User       = require("./models/user")    
        flash      = require("connect-flash")
        passport   = require("passport")
