@@ -14,4 +14,6 @@
 * Deployed on Heroku
 
 <!--  Images -->
-![image](https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/is-it-donut-or-doughnut-26@1x.jpg)
+<p>
+    <img src="public/screenshot.png"/>
+</p>
