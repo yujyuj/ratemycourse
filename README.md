@@ -14,6 +14,4 @@
 * Deployed on Heroku
 
 <!--  Images -->
-<p>
-    <img src="public/screenshot.png"/>
-</p>
+![Screenshot](public/screenshot.png)
