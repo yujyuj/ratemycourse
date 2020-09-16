@@ -15,8 +15,8 @@ router.get("/", (req, res)=>{
     })
 });
 
-//add a course to db, then redirect to page courses and the newly added course will show up
-router.post("/", middleware.isLoggedIn, (req, res)=>{
+//add a course to db
+router.post("/", middleware.isAdmin, (req, res)=>{
     var code = req.body.code;
     var name = req.body.name;
     var description = req.body.description;
@@ -41,12 +41,12 @@ router.post("/", middleware.isLoggedIn, (req, res)=>{
     });
 });
 
-//display the form of adding a new course
-router.get("/new", middleware.isLoggedIn, (req,res)=>{
+//display form to add a course
+router.get("/new", middleware.isAdmin, (req,res)=>{
     res.render("courses/new")
 });
 
-//show info of each course
+//show each course
 router.get("/:id", (req, res)=>{
     Course.findById(req.params.id).populate("comments").exec((err, found_course)=>{
         if(err){
@@ -58,12 +58,42 @@ router.get("/:id", (req, res)=>{
     });
 });
 
+// display form to update a course
+router.get("/:id/edit", middleware.isAdmin, (req, res)=>{
+    Course.findById(req.params.id, (err, course)=>{
+        if(err){
+            res.redirect("back");
+        }
+        else{
+            res.render("courses/edit", {course_ejs:course});
+        }
+    });
+});
+
 // update a course
-// router.get("/:id/edit", middleware.CheckCourseOwnership, (req, res)=>{
-// })
+router.put("/:id", middleware.isAdmin, (req, res)=>{
+    Course.findByIdAndUpdate(req.params.id, req.body.course, (err, updated_course)=>{
+        if(err){
+            res.redirect("back");
+        }
+        else{
+            res.redirect("/courses/" + req.params.id);
+        }
+    });
+});
 
 // destroy a course
-// router.delete("/:id", middleware.CheckCourseOwnership, (req, res)=>{
-// })
+router.delete("/:id", middleware.isAdmin, (req, res)=>{
+    Course.findByIdAndRemove(req.params.id, (err)=>{
+        if(err){
+            res.redirect("back");
+        }
+        else{
+            req.flash("success", "Course deleted");
+            res.redirect("/courses/");
+        }
+    });
+})
+
 
 module.exports = router

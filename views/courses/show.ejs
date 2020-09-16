@@ -8,7 +8,16 @@
         </div>
         <div class='col-md-3'>
 			<div>
-				<%= course_ejs.description%>
+                <%= course_ejs.description%>
+            </div>
+            <div>
+                <hr>
+                <% if(currentUser && currentUser.admin){ %>
+                    <a class="btn btn-xs btn-warning" href="/courses/<%= course_ejs._id %>/edit">Edit</a>
+                    <form id="delete-form" action="/courses/<%= course_ejs._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                    </form>
+                <% } %>
 			</div>
 		</div>
         <div class='col-md-9'>

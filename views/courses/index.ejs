@@ -3,8 +3,8 @@
 <div class="container">
     <header class="jumbotron">
         <div class="container">
-            <h1>Rate My OSU CS Courses</h1>
-            <% if(currentUser && currentUser.username == "admin"){ %>
+            <h1><img src="/OSU_logo.png">  Rate My OSU Courses</h1>
+            <% if(currentUser && currentUser.admin){ %>
             <p>
                 <a class='btn btn-primary btn-lg' href = "/courses/new">Add a new course</a>
             </p>
