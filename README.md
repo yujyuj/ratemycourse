@@ -14,4 +14,4 @@
 * Deployed on Heroku
 
 <!--  Images -->
-![Screenshot](public/screenshot.jpg)
+<!-- ![Screenshot](/public/screenshot.jpg) -->
