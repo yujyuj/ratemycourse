@@ -1,0 +1,28 @@
+<%- include ("../partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Rate My OSU CS Courses</h1>
+            <% if(currentUser && currentUser.username == "admin"){ %>
+            <p>
+                <a class='btn btn-primary btn-lg' href = "/courses/new">Add a new course</a>
+            </p>
+            <% } %>
+        </div>
+    </header>
+    
+    <div>
+		<% courses_ejs.forEach(i=>{ %>
+			<div class='col-lg-12'>
+                <div class='thumbnail'>
+                    <a href="/courses/<%=i._id%>"><h4><%= i.code %> - <%= i.name %></h4></a>
+                </div>
+			</div>
+		<% }) %>
+    </div>
+</div>
+
+
+
+<%- include ("../partials/footer") %>
