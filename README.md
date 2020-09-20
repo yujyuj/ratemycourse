@@ -6,12 +6,19 @@
 
 
 <!-- Inline code block  -->
-<p>A web app </p>
+<p>A web app where users can create an account and wirte reviews for courses.</p>
 
 <!-- Unordered list -->
 * HTML/CSS/JavaScript
-* Node JS, Express, MongoDB Atlas
-* Deployed on Heroku
+* Node.js, Express, MongoDB Atlas, Heroku
+* Packages/libraries used:
+    * Bootstrap
+    * ejs
+    * Passport
+    * Mongoose
+    * Flash
+    * dotenv
+    * moment
 
 <!--  Images -->
-<!-- ![Screenshot](/public/screenshot.jpg) -->
+![Screenshot](public/screenshot.png)
